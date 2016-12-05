@@ -47,6 +47,8 @@
     div#urlFinal {
       background: #c7c7c7;
       padding: 5px;
+      height: auto;
+      overflow: auto;
     }
     p.descripciónInput {
       font-size: 11px;
@@ -84,7 +86,9 @@
           <p class="descripciónInput">Se utiliza para diferenciar los anuncios</p>
           <br><br>
           <input type="button" value="Generar" onclick="generarURL()">
-        </form><br><br>
+        </form><br><br><br>
+         <p>Más información: <a href ="https://support.google.com/analytics/answer/1033863">Campañas personalizadas</a></p>
+        <br>
       </div>
       <div id="informacion">
         <h1>Generador de Campañas personalizadas Google Analytics</h1>
@@ -93,9 +97,6 @@
         <br>
         <h2>Parámetros</h2>
         <br>
-<p>Hay un total de cinco parámetros que puede agregar a sus URL: utm_source, utm_medium, utm_campaign, utm_term, utm_content. Cada parámetro debe estar emparejado con un valor que debe asignar usted mismo. Cada par de parámetro-valor contiene información de identificación de la campaña.</p><br>
-<p>Por ejemplo, podría configurar el parámetro utm_source como boletininformativo para identificar el tráfico que procede de un boletín informativo. A continuación, podría combinarlo con el parámetro utm_campaign configurado como junio para identificar que se trata de la campaña del mes de junio.</p><br>
-<p>Al agregar parámetros a una URL, siempre debe usar utm_source, utm_medium y utm_campaign. Los parámetros utm_term y utm_content son opcionales y se pueden usar para el seguimiento de la información adicional:</p><br>
 <p>utm_source: identifica el anunciante, el sitio, la publicación, etc. que envía tráfico a su propiedad, por ejemplo, google, boletininformativo4, billboard.</p><br>
 <p>utm_medium: medio publicitario o de marketing, por ejemplo, cpc, banner o boletín informativo por correo electrónico.</p><br>
 <p>utm_campaign: nombre de campaña individual, eslogan, código de promoción, etc. de un producto.</p><br>
@@ -111,7 +112,7 @@
         var utm_source = document.getElementById("utm_source").value;
         var utm_content = document.getElementById("utm_content").value;
         var utm_term = document.getElementById("utm_term").value;
-        document.getElementById("urlFinal").innerHTML = url+"?utm_campaign="+utm_campaign+"&utm_medium="+utm_medium+"&utm_source="+utm_source+utm_content+utm_term;
+        document.getElementById("urlFinal").innerHTML = url+"?utm_campaign="+utm_campaign+"&utm_medium="+utm_medium+"&utm_source="+utm_source+"&utm_content="+utm_content+"&utm_term="+utm_term;
       }
     </script>
   </body>
