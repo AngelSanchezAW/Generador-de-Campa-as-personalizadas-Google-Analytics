@@ -104,15 +104,15 @@
     </div>
   </div>
     <script>
-    function generarURL(){
-      var url = document.getElementById("url").value;
-      var utm_campaign = document.getElementById("utm_campaign").value;
-      var utm_medium = document.getElementById("utm_medium").value;
-      var utm_source = document.getElementById("utm_source").value;
-      var utm_content = document.getElementById("utm_content").value;
-      var utm_term = document.getElementById("utm_term").value;
-      document.getElementById("urlFinal").innerHTML = url+"?utm_campaign="+utm_campaign+"&utm_medium="+utm_medium+"&utm_source="+utm_source+utm_content+utm_term;
-    }
+      function generarURL(){
+        var url = document.getElementById("url").value;
+        var utm_campaign = document.getElementById("utm_campaign").value;
+        var utm_medium = document.getElementById("utm_medium").value;
+        var utm_source = document.getElementById("utm_source").value;
+        var utm_content = document.getElementById("utm_content").value;
+        var utm_term = document.getElementById("utm_term").value;
+        document.getElementById("urlFinal").innerHTML = url+"?utm_campaign="+utm_campaign+"&utm_medium="+utm_medium+"&utm_source="+utm_source+utm_content+utm_term;
+      }
     </script>
   </body>
 </html>
