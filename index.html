@@ -74,7 +74,11 @@
           <p class="descripciónInput">La de referencia: (por ejemplo; google,newsletter)</p>
           <br><br>
           <label>Medio de la campaña:</label><br>
-          <input type="text" id="utm_medium" placeholder="correoelectronico">
+          <input list="medio" type="text" id="utm_medium" placeholder="correoelectronico">
+          <datalist id="medio">
+            <option value="facebook">
+            <option value="twitter">
+          </datalist>
           <p class="descripciónInput">Medio de marketing: (por ejemplo: cpc,banner,email)</p>
           <br><br>
           <label>Nombre de campaña:</label><br>
@@ -82,11 +86,11 @@
           <p class="descripciónInput">Producto, código de promoción o eslogan (por ejemplo: spring_sale)</p>
           <br><br>
           <label>Término de la campaña:</label><br>
-          <input type="text" id="utm_content" placeholder="toplink">
+          <input type="text" id="utm_content" placeholder="toplink" disabled> <!--Campo disabled-->
           <p class="descripciónInput">Identificar las palabras clave de pago</p>
           <br><br>
           <label>Contenido de la campaña:</label><br>
-          <input type="text" id="utm_term" placeholder="TipoA">
+          <input type="text" id="utm_term" placeholder="TipoA" disabled> <!--Campo disabled-->
           <p class="descripciónInput">Se utiliza para diferenciar los anuncios</p>
           <br><br>
           <input type="button" value="Generar" onclick="generarURL()">
@@ -101,11 +105,11 @@
         <br>
         <h2>Parámetros</h2>
         <br>
-<p>utm_source: identifica el anunciante, el sitio, la publicación, etc. que envía tráfico a su propiedad, por ejemplo, google, boletininformativo4, billboard.</p><br>
-<p>utm_medium: medio publicitario o de marketing, por ejemplo, cpc, banner o boletín informativo por correo electrónico.</p><br>
-<p>utm_campaign: nombre de campaña individual, eslogan, código de promoción, etc. de un producto.</p><br>
-<p>utm_term: identifica las palabras clave de búsqueda de pago. Si etiqueta campañas de palabra clave de pago de forma manual, también deberá usar utm_term para especificar el término en cuestión.</p><br>
-<p>utm_content: se usa para diferenciar el contenido o los enlaces similares del mismo anuncio. Por ejemplo, si tiene dos enlaces de llamada a la acción en un mismo mensaje de correo electrónico, puede utilizar utm_content y establecer distintos valores para cada uno a fin de determinar qué versión es más eficaz.</p><br>
+        <p>utm_source: identifica el anunciante, el sitio, la publicación, etc. que envía tráfico a su propiedad, por ejemplo, google, boletininformativo4, billboard.</p><br>
+        <p>utm_medium: medio publicitario o de marketing, por ejemplo, cpc, banner o boletín informativo por correo electrónico.</p><br>
+        <p>utm_campaign: nombre de campaña individual, eslogan, código de promoción, etc. de un producto.</p><br>
+        <p>utm_term: identifica las palabras clave de búsqueda de pago. Si etiqueta campañas de palabra clave de pago de forma manual, también deberá usar utm_term para especificar el término en cuestión.</p><br>
+        <p>utm_content: se usa para diferenciar el contenido o los enlaces similares del mismo anuncio. Por ejemplo, si tiene dos enlaces de llamada a la acción en un mismo mensaje de correo electrónico, puede utilizar utm_content y establecer distintos valores para cada uno a fin de determinar qué versión es más eficaz.</p><br>
     </div>
   </div>
     <script>
@@ -116,7 +120,8 @@
         var utm_source = document.getElementById("utm_source").value;
         var utm_content = document.getElementById("utm_content").value;
         var utm_term = document.getElementById("utm_term").value;
-        document.getElementById("urlFinal").innerHTML = url+"?utm_campaign="+utm_campaign+"&utm_medium="+utm_medium+"&utm_source="+utm_source+"&utm_content="+utm_content+"&utm_term="+utm_term;
+        // Los campos utm_content y utm_term esta deshabilitados "+"&utm_content="+utm_content+"&utm_term="+utm_term". 
+        document.getElementById("urlFinal").innerHTML = url+"?utm_campaign="+utm_campaign+"&utm_medium="+utm_medium+"&utm_source="+utm_source;
       }
     </script>
   </body>
