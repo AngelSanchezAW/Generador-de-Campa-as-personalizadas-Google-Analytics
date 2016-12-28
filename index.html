@@ -101,7 +101,7 @@
       <div id="informacion">
         <h1>Generador de Campañas personalizadas Google Analytics</h1>
         <br>
-        <div id="urlFinal">Aquí pararesera la URL personalizada lista para copiar.</div>
+        <div class="claseUrlFinal" id="urlFinal">Aquí pararesera la URL personalizada lista para copiar.</div>
         <br>
         <h2>Parámetros</h2>
         <br>
@@ -120,8 +120,17 @@
         var utm_source = document.getElementById("utm_source").value;
         var utm_content = document.getElementById("utm_content").value;
         var utm_term = document.getElementById("utm_term").value;
-        // Los campos utm_content y utm_term esta deshabilitados "+"&utm_content="+utm_content+"&utm_term="+utm_term". 
-        document.getElementById("urlFinal").innerHTML = url+"?utm_campaign="+utm_campaign+"&utm_medium="+utm_medium+"&utm_source="+utm_source;
+        // Los campos utm_content y utm_term esta deshabilitados "+"&utm_content="+utm_content+"&utm_term="+utm_term".
+        var urlFinal = url+"?utm_campaign="+utm_campaign+"&utm_medium="+utm_medium+"&utm_source="+utm_source;
+        document.getElementById("urlFinal").innerHTML = urlFinal;
+
+        // Copiar al portapaleles URL generada 
+        var claseUrlFinal = document.querySelector('.claseUrlFinal');
+        var range = document.createRange();
+        range.selectNode(claseUrlFinal);
+        window.getSelection().addRange(range);
+        document.execCommand("copy");
+
       }
     </script>
   </body>
