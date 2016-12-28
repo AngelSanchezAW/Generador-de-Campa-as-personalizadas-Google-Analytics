@@ -5,56 +5,56 @@
     <title>Generador de Campañas personalizadas Google Analytics</title>
     <link href="https://fonts.googleapis.com/css?family=Lato" rel="stylesheet">
     <style>
-    *{
-      margin: 0px;
-      padding: 0px;
-      font-family: 'Lato', sans-serif;
-    }
-    #contenedor{
-      max-width: 1100px;
-      margin: auto;
-    }
-    #formulario{
-      width: 500px;
-      float: left;
-      margin-top: 40px;
-    }
-    #informacion{
-      float: right;
-      width: 500px;
-      margin-top: 40px;
-    }
-    #formulario form input[type="text"]{
-      width: 500px;
-      border-radius: 5px;
-      border: none;
-      border: solid 1px #a5a1a1;
-      height: 20px;
-      padding: 7px;
-      margin-top: 6px;
-    }
-    #formulario form input[type="button"] {
-      float: right;
-      padding: 8px;
-      margin-right: -15px;
-      border-radius: 5px;
-      width: 126px;
-      background: rgb(0, 137, 255);
-      color: #ffffff;
-      border-color: #005fb1;
-      cursor: pointer;
-    }
-    div#urlFinal {
-      background: #c7c7c7;
-      padding: 5px;
-      height: auto;
-      overflow: auto;
-    }
-    p.descripciónInput {
-      font-size: 11px;
-      color: darkgrey;
-      margin-bottom: -30px;
-    }
+      *{
+        margin: 0px;
+        padding: 0px;
+        font-family: 'Lato', sans-serif;
+      }
+      #contenedor{
+        max-width: 1100px;
+        margin: auto;
+      }
+      #formulario{
+        width: 500px;
+        float: left;
+        margin-top: 40px;
+      }
+      #informacion{
+        float: right;
+        width: 500px;
+        margin-top: 40px;
+      }
+      #formulario form input[type="text"]{
+        width: 500px;
+        border-radius: 5px;
+        border: none;
+        border: solid 1px #a5a1a1;
+        height: 20px;
+        padding: 7px;
+        margin-top: 6px;
+      }
+      #formulario form input[type="button"] {
+        float: right;
+        padding: 8px;
+        margin-right: -15px;
+        border-radius: 5px;
+        width: 126px;
+        background: rgb(0, 137, 255);
+        color: #ffffff;
+        border-color: #005fb1;
+        cursor: pointer;
+      }
+      div#urlFinal {
+        background: #c7c7c7;
+        padding: 5px;
+        height: auto;
+        overflow: auto;
+      }
+      p.descripciónInput {
+        font-size: 11px;
+        color: darkgrey;
+        margin-bottom: -30px;
+      }
     </style>
   </head>
   <body>
@@ -66,7 +66,11 @@
           <p class="descripciónInput">La URL del sitio web completo (por ejemplo:https://www.example.com)</p>
           <br><br>
           <label>Origen de la campaña:</label><br>
-          <input type="text" id="utm_campaign" placeholder="primavera">
+          <input list="campañas" type="text" id="utm_campaign" placeholder="primavera">
+          <datalist id="campañas">
+            <option value="culturainformatica">
+            <option value="arteprogra">
+          </datalist>
           <p class="descripciónInput">La de referencia: (por ejemplo; google,newsletter)</p>
           <br><br>
           <label>Medio de la campaña:</label><br>
